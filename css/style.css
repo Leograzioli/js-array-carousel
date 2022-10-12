@@ -25,7 +25,7 @@
     height: 60vh;
 }
 
-.card-left {
+.card-right {
     position: absolute;
     right:-300px;
     width: 300px;

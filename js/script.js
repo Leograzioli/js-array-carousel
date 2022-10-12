@@ -43,7 +43,6 @@ borderImg[borderPosition].classList.add("active-border");
 //to add and take off class active on click
 const topButton = document.querySelector(".top");
 const bottomButton = document.querySelector(".bottom");
-console.log(topButton, bottomButton);
 
 bottomButton.addEventListener("click", function() {
 
@@ -90,7 +89,7 @@ topButton.addEventListener("click", function() {
         cardImg[sliderPosition].classList.add("active");
         borderImg[borderPosition].classList.add("active-border");
     }
-})
+});
 
 
 
