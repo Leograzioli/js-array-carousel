@@ -7,7 +7,7 @@ const pictureLits = [
 ];
 const card = document.querySelector(".card");
 
-//create element 
+//creating element img big
 for (let i = 0; i < pictureLits.length; i++) {
     const picPosition = pictureLits[i];
     const element = 
@@ -19,6 +19,7 @@ for (let i = 0; i < pictureLits.length; i++) {
 
 const cardLeft = document.querySelector(".card-left");
 
+//creating element img small
 for (let i = 0; i < pictureLits.length; i++) {
     const picPosition = pictureLits[i];
     const element = 
