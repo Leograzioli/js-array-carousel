@@ -44,7 +44,7 @@ const topButton = document.querySelector(".top");
 const bottomButton = document.querySelector(".bottom");
 console.log(topButton, bottomButton);
 
-topButton.addEventListener("click", function() {
+bottomButton.addEventListener("click", function() {
 
     if (sliderPosition < 4){
         cardImg[sliderPosition].classList.remove("active");
@@ -68,7 +68,7 @@ topButton.addEventListener("click", function() {
     }
 });
 
-bottomButton.addEventListener("click", function() {
+topButton.addEventListener("click", function() {
     if (sliderPosition > 0) {
         cardImg[sliderPosition].classList.remove("active");
         borderImg[borderPosition].classList.remove("active-border");
