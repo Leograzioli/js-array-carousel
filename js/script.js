@@ -19,9 +19,7 @@ for (let i = 0; i < pictureLits.length; i++) {
 
 //initial status 
 const cardImg = document.getElementsByClassName("card-img");
-console.log(cardImg)
 let sliderPosition = 0;
-console.log(sliderPosition);
 cardImg[sliderPosition].classList.add("active");
 
 //to hide and show pics on click
@@ -29,6 +27,8 @@ const topButton = document.querySelector(".top");
 const bottomButton = document.querySelector(".bottom");
 console.log(topButton, bottomButton);
 
+
+//button active
 topButton.addEventListener("click", function() {
 
     if (sliderPosition < 4){
