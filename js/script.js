@@ -17,7 +17,7 @@ for (let i = 0; i < pictureLits.length; i++) {
     card.innerHTML += element;
 }
 
-const cardLeft = document.querySelector(".card-left");
+const cardLeft = document.querySelector(".card-right");
 
 //creating element img small
 for (let i = 0; i < pictureLits.length; i++) {
@@ -44,8 +44,8 @@ borderImg[borderPosition].classList.add("active-border");
 const topButton = document.querySelector(".top");
 const bottomButton = document.querySelector(".bottom");
 
-bottomButton.addEventListener("click", function() {
-
+bottomButton.addEventListener("click", function(e) {
+    console.log(e);
     if (sliderPosition < 4){
         cardImg[sliderPosition].classList.remove("active");
         borderImg[borderPosition].classList.remove("active-border");
@@ -90,6 +90,4 @@ topButton.addEventListener("click", function() {
         borderImg[borderPosition].classList.add("active-border");
     }
 });
-
-
 
