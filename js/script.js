@@ -37,6 +37,13 @@ topButton.addEventListener("click", function() {
         sliderPosition++;
         
         cardImg[sliderPosition].classList.add("active");
+
+    } else {
+        cardImg[sliderPosition].classList.remove("active");
+    
+        sliderPosition = 0;
+        
+        cardImg[sliderPosition].classList.add("active");
     }
 });
 
@@ -45,6 +52,13 @@ bottomButton.addEventListener("click", function() {
         cardImg[sliderPosition].classList.remove("active");
     
         sliderPosition--;
+        
+        cardImg[sliderPosition].classList.add("active");
+
+    } else {
+        cardImg[sliderPosition].classList.remove("active");
+    
+        sliderPosition = 4;
         
         cardImg[sliderPosition].classList.add("active");
     }
