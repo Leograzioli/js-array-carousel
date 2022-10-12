@@ -14,8 +14,9 @@
 .card {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
+    width: 50%;
 }
 
 .card-img {
