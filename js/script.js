@@ -1,93 +1,106 @@
 const pictureLits = [
-    "img/01.jpg", 
-    "img/02.jpg", 
-    "img/03.jpg", 
-    "img/04.jpg", 
+    "img/01.jpg",
+    "img/02.jpg",
+    "img/03.jpg",
+    "img/04.jpg",
     "img/05.jpg",
 ];
-const card = document.querySelector(".card");
+const card = document.querySelector(".card-left");
+const cardRight = document.querySelector(".card-right");
 
-//creating element img big
+//creating element img big=
 for (let i = 0; i < pictureLits.length; i++) {
-    const picPosition = pictureLits[i];
-    const element = 
-    `<div class="card-img ">
-        <img src="${picPosition}" alt="">
-    </div>`;
+    let picPosition = pictureLits[i];
+    const element =
+        `<div class="card-img">
+            <img src="${pictureLits[i]}" alt="" >
+        </div>`;
+
+        const elementRight =
+        `<div class="card-small-img">
+            <img src="${pictureLits[i]}" alt="">
+        </div>`;
+
     card.innerHTML += element;
+    cardRight.innerHTML += elementRight;
 }
 
-const cardLeft = document.querySelector(".card-right");
-
-//creating element img small
-for (let i = 0; i < pictureLits.length; i++) {
-    const picPosition = pictureLits[i];
-    const element = 
-    `<div class="card-small-img ">
-        <img src="${picPosition}" alt="">
-    </div>`;
-    cardLeft.innerHTML += element;
-}
 
 
 //initial status of active class
 const cardImg = document.getElementsByClassName("card-img");
+const cardSmallImg = document.getElementsByClassName("card-small-img");
 let sliderPosition = 0;
 cardImg[sliderPosition].classList.add("active");
+cardSmallImg[sliderPosition].classList.add("active");
 
-//initial status of active-border class
-const borderImg = document.getElementsByClassName("card-small-img");
-let borderPosition = 0
-borderImg[borderPosition].classList.add("active-border");
 
-//to add and take off class active on click
-const topButton = document.querySelector(".top");
-const bottomButton = document.querySelector(".bottom");
+//onclick
 
-bottomButton.addEventListener("click", function(e) {
-    console.log(e);
+const bottomBtn = document.querySelector(".bottom");
+const topBtn = document.querySelector(".top");
+
+bottomBtn.addEventListener("click", function() {
+
     if (sliderPosition < 4){
+
         cardImg[sliderPosition].classList.remove("active");
-        borderImg[borderPosition].classList.remove("active-border");
-    
+        cardSmallImg[sliderPosition].classList.remove("active");
+
         sliderPosition++;
-        borderPosition++;
-        
+
         cardImg[sliderPosition].classList.add("active");
-        borderImg[borderPosition].classList.add("active-border");
+        cardSmallImg[sliderPosition].classList.add("active");
 
     } else {
+
         cardImg[sliderPosition].classList.remove("active");
-        borderImg[borderPosition].classList.remove("active-border");
-    
-        sliderPosition = 0;
-        borderPosition = 0
-        
+        cardSmallImg[sliderPosition].classList.remove("active");
+
+        sliderPosition = 0
+
         cardImg[sliderPosition].classList.add("active");
-        borderImg[borderPosition].classList.add("active-border");
+        cardSmallImg[sliderPosition].classList.add("active");
     }
 });
 
-topButton.addEventListener("click", function() {
-    if (sliderPosition > 0) {
+topBtn.addEventListener("click", function() {
+
+    if (sliderPosition > 0){
         cardImg[sliderPosition].classList.remove("active");
-        borderImg[borderPosition].classList.remove("active-border");
-    
+        cardSmallImg[sliderPosition].classList.remove("active");
+
         sliderPosition--;
-        borderPosition--;
-        
-        cardImg[sliderPosition].classList.add("active");
-        borderImg[borderPosition].classList.add("active-border");
 
-    } else {
-        cardImg[sliderPosition].classList.remove("active");
-        borderImg[borderPosition].classList.remove("active-border");
-    
-        sliderPosition = 4;
-        borderPosition = 4;
-        
         cardImg[sliderPosition].classList.add("active");
-        borderImg[borderPosition].classList.add("active-border");
+        cardSmallImg[sliderPosition].classList.add("active");
+    } else {
+
+        cardImg[sliderPosition].classList.remove("active");
+        cardSmallImg[sliderPosition].classList.remove("active");
+
+        sliderPosition = 4
+
+        cardImg[sliderPosition].classList.add("active");
+        cardSmallImg[sliderPosition].classList.add("active");
     }
 });
+
+for (let i = 0; i < cardSmallImg.length; i++) {
+    const element = cardSmallImg[i];
+    element.addEventListener("click", function() {
+
+        cardImg[sliderPosition].classList.remove("active");
+        cardSmallImg[sliderPosition].classList.remove("active");
+        
+        sliderPosition = i;
+
+        cardImg[sliderPosition].classList.add("active");
+        cardSmallImg[sliderPosition].classList.add("active")
+        
+    });
+    
+}
+
+
 
