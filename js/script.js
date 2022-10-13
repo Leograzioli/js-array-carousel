@@ -5,6 +5,7 @@ const pictureLits = [
     "img/04.jpg",
     "img/05.jpg",
 ];
+
 const card = document.querySelector(".card-left");
 const cardRight = document.querySelector(".card-right");
 
@@ -25,15 +26,12 @@ for (let i = 0; i < pictureLits.length; i++) {
     cardRight.innerHTML += elementRight;
 }
 
-
-
 //initial status of active class
 const cardImg = document.getElementsByClassName("card-img");
 const cardSmallImg = document.getElementsByClassName("card-small-img");
 let sliderPosition = 0;
 cardImg[sliderPosition].classList.add("active");
 cardSmallImg[sliderPosition].classList.add("active");
-
 
 //onclick
 const bottomBtn = document.querySelector(".bottom");
@@ -70,7 +68,7 @@ topBtn.addEventListener("click", function() {
 
         sliderPosition = 4
     }
-    
+
     cardImg[sliderPosition].classList.add("active");
     cardSmallImg[sliderPosition].classList.add("active");
 });
@@ -87,9 +85,5 @@ for (let i = 0; i < cardSmallImg.length; i++) {
         cardImg[sliderPosition].classList.add("active");
         cardSmallImg[sliderPosition].classList.add("active")
         
-    });
-    
+    });  
 }
-
-
-
