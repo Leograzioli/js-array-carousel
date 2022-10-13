@@ -37,6 +37,7 @@
     position: relative;
     width: 300px;
     height: 60vh;
+    background-color: black;
 }
 
 .card-right  .active {
